@@ -1,0 +1,21 @@
+body {
+  background-image: url("background.jpg");
+  margin: auto;
+  width: 100rem;
+}
+
+body .container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 3em;
+  height: 60rem;
+}
+
+body .container .container-box {
+  justify-content: center;
+  height: 15rem;
+  width: 15rem;
+  background-color: yellow;
+  border: 3px solid green;
+}
