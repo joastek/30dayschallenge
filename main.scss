@@ -1,6 +1,19 @@
 $gutter-width: 100rem;
 $gutter-box: 12rem;
-
+@keyframes example {
+  0% {
+    background-color: red;
+  }
+  25% {
+    background-color: yellow;
+  }
+  50% {
+    background-color: blue;
+  }
+  100% {
+    background-color: green;
+  }
+}
 body {
   background-image: url("background.jpg");
   margin: auto;
@@ -15,10 +28,22 @@ body {
     height: 60rem;
     .container-box {
       justify-content: center;
-      height: 15rem;
+      height: 6rem;
       width: 15rem;
       background-color: yellow;
       border: 3px solid green;
+
+      #hidden {
+        animation-name: example;
+        animation-duration: 3s;
+      }
+      p {
+        padding: 0.2rem;
+
+        &:last-child {
+          color: red;
+        }
+      }
     }
   }
 }
