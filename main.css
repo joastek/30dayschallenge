@@ -27,17 +27,18 @@ body .container {
   height: 60rem;
 }
 
+body .container .playing {
+  transform: scale(1.2) border-color #ffc600;
+  box-shadow: 0 0 10px #ffc600;
+}
+
 body .container .container-box {
   justify-content: center;
   height: 6rem;
   width: 15rem;
   background-color: yellow;
   border: 3px solid green;
-}
-
-body .container .container-box #hidden {
-  animation-name: example;
-  animation-duration: 3s;
+  transition: width 1s;
 }
 
 body .container .container-box p {

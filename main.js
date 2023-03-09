@@ -1,14 +1,16 @@
-//drums
-let soundA = new Audio("sounds/clap.wav");
-let soundC = new Audio("sounds/hihat.wav");
-const btnHideRectangle = document.querySelector(".container-box");
-document.addEventListener("keydown", function (event) {
-  if (event.keyCode == 65) {
-    soundA.currentTime = 0;
-    soundA.play();
-    btnHideRectangle.style.borderLeft = "25px solid green";
-  } else if (event.keyCode == 83) {
-    soundC.currentTime = 0;
-    soundC.play();
-  }
-});
+function playing(e) {
+  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+  const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+  if (!audio) return;
+  audio.play();
+  audio.currentTime = 0;
+  key.classList.add("playing");
+}
+function removeTransition(e) {
+  if (e.propertyName !== "transform") return;
+  this.classList.remove("playing");
+}
+
+window.addEventListener("keydown", playing);
+const keys = document.querySelectorAll(".key");
+keys.forEach((key) => key.addEventListener("transitionend", removeTransition));
